@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털 시계 - 시간대별</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 글로벌 시간대 시계</h1>
+            <p class="subtitle">전세계 여러 시간대의 현재 시간을 한눈에 확인하세요</p>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="도시 또는 시간대 검색..." class="search-box">
+            <button class="btn-add" onclick="showAddTimezone()">+ 시간대 추가</button>
+        </div>
+
+        <div id="addTimezoneModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeAddTimezone()">&times;</span>
+                <h2>시간대 추가</h2>
+                <select id="timezoneSelect" class="timezone-select">
+                    <option value="">시간대를 선택하세요</option>
+                    <option value="UTC">UTC (협정 세계시)</option>
+                    <option value="Asia/Seoul">Seoul (서울)</option>
+                    <option value="Asia/Tokyo">Tokyo (도쿄)</option>
+                    <option value="Asia/Shanghai">Shanghai (상하이)</option>
+                    <option value="Asia/Hong_Kong">Hong Kong (홍콩)</option>
+                    <option value="Asia/Bangkok">Bangkok (방콕)</option>
+                    <option value="Asia/Singapore">Singapore (싱가포르)</option>
+                    <option value="Asia/Dubai">Dubai (두바이)</option>
+                    <option value="Asia/Kolkata">India Standard Time (인도)</option>
+                    <option value="Europe/London">London (런던)</option>
+                    <option value="Europe/Paris">Paris (파리)</option>
+                    <option value="Europe/Berlin">Berlin (베를린)</option>
+                    <option value="Europe/Moscow">Moscow (모스크바)</option>
+                    <option value="Africa/Cairo">Cairo (카이로)</option>
+                    <option value="Africa/Johannesburg">Johannesburg (요하네스버그)</option>
+                    <option value="America/New_York">New York (뉴욕)</option>
+                    <option value="America/Chicago">Chicago (시카고)</option>
+                    <option value="America/Denver">Denver (덴버)</option>
+                    <option value="America/Los_Angeles">Los Angeles (로스앤젤레스)</option>
+                    <option value="America/Anchorage">Anchorage (앵커리지)</option>
+                    <option value="Pacific/Honolulu">Honolulu (호놀룰루)</option>
+                    <option value="America/Toronto">Toronto (토론토)</option>
+                    <option value="America/Mexico_City">Mexico City (멕시코시티)</option>
+                    <option value="America/Sao_Paulo">Sao Paulo (상파울루)</option>
+                    <option value="America/Buenos_Aires">Buenos Aires (부에노스아이레스)</option>
+                    <option value="Australia/Sydney">Sydney (시드니)</option>
+                    <option value="Australia/Melbourne">Melbourne (멜버른)</option>
+                    <option value="Pacific/Auckland">Auckland (오클랜드)</option>
+                </select>
+                <button class="btn-primary" onclick="addTimezone()">추가</button>
+            </div>
+        </div>
+
+        <div class="clocks-grid" id="clocksContainer">
+            <!-- 시계들이 여기 표시됩니다 -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
